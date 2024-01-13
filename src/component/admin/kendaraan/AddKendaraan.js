@@ -89,7 +89,7 @@ function AddKendaraan() {
                       <div className="row">
                         <div className="col-6">
                           <div className="form-group">
-                            <label htmlFor="tipe_kendaraan">Kode Layanan</label>
+                            <label htmlFor="tipe_kendaraan">Tipe Kendaraan</label>
                             <input
                               type="text"
                               className="form-control"

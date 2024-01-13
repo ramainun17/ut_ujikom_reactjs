@@ -146,7 +146,7 @@ function EditProduk() {
                               type="text"
                               className="form-control"
                               name="nama_produk"
-                              placeholder="Masukkan Kode Produk"
+                              placeholder="Masukkan Nama Produk"
                               onChange={handleChange}
                               value={formValue.nama_produk}
                             />

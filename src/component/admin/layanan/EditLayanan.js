@@ -146,7 +146,7 @@ function EditLayanan() {
                               type="text"
                               className="form-control"
                               name="nama_layanan"
-                              placeholder="Masukkan Kode Layanan"
+                              placeholder="Masukkan Nama Layanan"
                               onChange={handleChange}
                               value={formValue.nama_layanan}
                             />

@@ -16,8 +16,7 @@ function EditKendaraan() {
   const fectData = React.useCallback(async () => {
     //fetching
     const response = await axios.get(
-      "https://smiling-ruby-gosling.cyclic.app/api/Pegawai/get/" +
-        id
+      "https://smiling-ruby-gosling.cyclic.app/api/Pegawai/get/" + id
     );
     //get response data
     const data = response.data.data[0];
@@ -50,11 +49,10 @@ function EditKendaraan() {
 
     // Validation
     if (
-        formValue.name.trim() === "" ||
-        formValue.email.trim() === "" ||
-        formValue.password.trim() === "" ||
-        formValue.role.trim() === ""
-        ) {
+      formValue.name.trim() === "" ||
+      formValue.email.trim() === "" ||
+      formValue.password.trim() === ""
+    ) {
       alert("All fields are required. Please fill in all the fields.");
       return;
     }
@@ -70,9 +68,7 @@ function EditKendaraan() {
       // make axios post request
       const response = await axios({
         method: "put",
-        url:
-          "https://smiling-ruby-gosling.cyclic.app/api/Pegawai/update/" +
-          id,
+        url: "https://smiling-ruby-gosling.cyclic.app/api/Pegawai/update/" + id,
         data: FormDataInput,
         headers: { "Content-Type": "application/json" },
       });
@@ -124,7 +120,7 @@ function EditKendaraan() {
                 <div className="card-body">
                   <form onSubmit={handleSubmit}>
                     <div className="card-body">
-                        <div className="row">
+                      <div className="row">
                         <div className="col-6">
                           <div className="form-group">
                             <label htmlFor="name">Nama</label>
@@ -151,39 +147,39 @@ function EditKendaraan() {
                             />
                           </div>
                         </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-6">
+                          <div className="form-group">
+                            <label htmlFor="role">Role</label>
+                            <select
+                              className="form-control"
+                              name="role"
+                              onChange={handleChange}
+                              value={formValue.role}
+                            >
+                              <option>--Pilih Posisi--</option>
+                              <option value="1">Admin</option>
+                              <option value="2">Kasir</option>
+                              <option value="3">Teknisi</option>
+                            </select>
+                          </div>
                         </div>
-                        <div className="row">
-                            <div className="col-6">
-                            <div className="form-group">
-                                <label htmlFor="role">Role</label>
-                                <select
-                                className="form-control"
-                                name="role"
-                                onChange={handleChange}
-                                value={formValue.role}
-                                >
-                                <option>--Pilih Posisi--</option>
-                                <option value="1">Admin</option>
-                                <option value="2">Kasir</option>
-                                <option value="3">Teknisi</option>
-                                </select>
-                            </div>
-                            </div>
-                            <div className="col-6">
-                            <div className="form-group">
-                                <label htmlFor="password">Password</label>
-                                <input
-                                type="password"
-                                className="form-control"
-                                name="password"
-                                placeholder="Masukkan Password"
-                                onChange={handleChange}
-                                value={formValue.password}
-                                />
-                            </div>
-                            </div>
+                        <div className="col-6">
+                          <div className="form-group">
+                            <label htmlFor="password">Password</label>
+                            <input
+                              type="password"
+                              className="form-control"
+                              name="password"
+                              placeholder="Masukkan Password"
+                              onChange={handleChange}
+                              value={formValue.password}
+                            />
+                          </div>
                         </div>
-                        <div>
+                      </div>
+                      <div>
                         <button type="submit" className="btn btn-warning">
                           {" "}
                           Edit

@@ -50,6 +50,11 @@ function ListTransaksi() {
       sortable: true,
     },
     {
+      name: "Pemesan",
+      selector: (row) => row.name,
+      sortable: true,
+    },
+    {
       name: "Total Harga",
       selector: (row) => row.total_harga,
       sortable: true,

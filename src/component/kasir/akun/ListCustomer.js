@@ -16,7 +16,9 @@ function ListCustomer() {
   //function "fetchData"
   const fectData = async () => {
     //fetching
-    const response = await axios.get("https://smiling-ruby-gosling.cyclic.app/api/User/get");
+    const response = await axios.get(
+      "https://smiling-ruby-gosling.cyclic.app/api/User/get"
+    );
     //get response data
     const data = await response.data.data;
     //assign response data to state "datauser"

@@ -26,6 +26,25 @@ function ListOrder() {
     console.log(data);
   };
 
+  const copyToClipboard = (token) => {
+    // Create a temporary input element
+    const tempInput = document.createElement("input");
+    tempInput.value = token;
+
+    // Append the input element to the DOM
+    document.body.appendChild(tempInput);
+
+    // Select the text in the input element
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); /* For mobile devices */
+
+    // Copy the text to the clipboard
+    document.execCommand("copy");
+
+    // Remove the temporary input element
+    document.body.removeChild(tempInput);
+  };
+
   const columns = [
     {
       name: "No",
@@ -52,6 +71,19 @@ function ListOrder() {
       name: "Status",
       selector: (row) => row.status,
       sortable: true,
+    },
+    {
+      name: "Token",
+      cell: (row) => (
+        <>
+          <button
+            className="btn btn-success"
+            onClick={() => copyToClipboard(row.remember_token)}
+          >
+            Copy Token
+          </button>
+        </>
+      ),
     },
     {
       name: "Aksi",
